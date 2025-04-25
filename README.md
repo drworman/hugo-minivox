@@ -1,4 +1,4 @@
-# README for HUGO-MINIVOX v0.1.1
+# README for HUGO-MINIVOX v00.01.01
                                                                                                           
 **Minivox** is a Hugo theme that is intended to display information on screen without a bunch of fancy fluff getting in the way. Additional information [here](http://hugo-minivox.worman.com/about).
 
