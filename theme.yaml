@@ -1,9 +1,9 @@
 name: "Hugo Minivox"
 license: MIT
-licenselink: https://github.com/drworman/hugo-minivox/LICENSE
+licenselink: http://hugo-minivox.worman.com/license/
 description: "A minimalist theme intended to get content in your face quick and clean."
 homepage: https://github.com/drworman/hugo-minivox
-demosite: http://david.worman.com
+demosite: http://hugo-minivox.worman.com
 
 params:
   tVersion: '0.1.0'
