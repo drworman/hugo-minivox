@@ -6,7 +6,7 @@ homepage: https://github.com/drworman/hugo-minivox
 demosite: http://hugo-minivox.worman.com
 
 params:
-  tVersion: '0.1.0'
+  tVersion: '00.01.01'
 
 tags:
   - clean
