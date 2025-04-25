@@ -1,0 +1,18 @@
+{{ define "main" }}
+{{ $dateMachine := .Date | time.Format "1977-05-25T15:00:00-00:00" }}
+{{ $dateHuman := .Date | time.Format ":date_long" }}
+{{ $pages := .Site.RegularPages.ByDate.Reverse }}
+{{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+<div class="container">
+  <div class="article-meta"><span class="title">{{ .Title | markdownify }}</span></div>
+  <hr/>
+  {{ range (where $pages "Section" "==" (lower .CurrentSection.Title)) }}
+  <div class=" inlineLeft postMeta"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></div>
+  <div class="inlineRight postMeta">
+    {{ if or (gt .Params.date 0) (not (eq .CurrentSection.Title .Site.Title)) }}Posted{{ end }}
+    {{ if (gt .Params.date 0) }} on <time class="date" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>{{ end }}
+  </div>
+  <br/>
+</div>
+{{ end }}
+{{ end }}

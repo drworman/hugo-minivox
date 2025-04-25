@@ -1,0 +1,27 @@
+name: "Hugo Minivox"
+license: MIT
+licenselink: https://github.com/drworman/hugo-minivox/LICENSE
+description: "A minimalist theme intended to get content in your face quick and clean."
+homepage: https://github.com/drworman/hugo-minivox
+demosite: http://david.worman.com
+
+params:
+  tVersion: '0.1.0'
+
+tags:
+  - clean
+  - minimal
+  - minimalist
+  - simple
+features:
+  - clean
+  - fast
+  - minimal
+author:
+  name: "David R. Worman"
+  homepage: "http://david.worman.com"
+
+module:
+  hugoVersion:
+    extended: false
+    min: 0.116.0

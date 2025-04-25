@@ -1,0 +1,53 @@
+baseurl: http://exampleSite.com/
+languageCode: en-us
+title: "Example Site"
+theme: hugo-minivox
+googleAnalytics: ""
+disqusShortname: ""
+ignoreFiles:
+  - notes.sqlite$
+menu:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+    - name: News
+      url: /news
+      weight: 2
+    - name: Categories
+      url: /categories
+      weight: 20
+    - name: Tags
+      url: /tags
+      weight: 30
+    - name: About
+      url: /about
+      weight: 100
+params:
+  description: "An example site built by [Hugo](https://gohugo.io/)"
+  footer: "&copy; {Year} [Random Author](http://exampleSite.com)"
+  author: "Willy Shakes" # Default site-wide author, will be used it no author frontmatter is supplied.
+  authorEmail: ""
+  authorSocial: ""
+taxonomies:
+  author: author
+  category: categories
+  tag: tags
+markup:
+  highlight:
+    codeFences: false
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - - \[
+              - \]
+            - - $$
+              - $$
+          inline:
+            - - \(
+              - \)

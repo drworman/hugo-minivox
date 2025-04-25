@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="container">
+    <div class="article-meta">
+        {{ $dateMachine := .Date | time.Format "1977-05-25T15:00:00-00:00" }}
+        {{ $dateHuman := .Date | time.Format ":date_long" }}
+        {{ if (gt .Params.date 0) }}<time class="inlineRight margin-half" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>{{ end }}
+        <span class="title">{{ .Title | markdownify }}</span><br/>
+        {{ with .Params.author }}{{ . }}
+        {{ else }}
+        {{ with .Site.Params.author }}<br/>{{ . }}{{ end }}
+        {{ end }}
+        <br/><br/>
+        {{ partial "tags.html" (dict "taxonomy" "tags" "page" .) }}
+    </div>
+    <hr/>
+</div>
+<main>
+    {{ .Content }}
+</main>
+{{ end }}

@@ -1,0 +1,29 @@
+/* Minivox Default */
+
+:root {
+    --color1: #006699;
+    /* background */
+    /* color for table header */
+    /* color for table rows (even) */
+
+    --color2: #222222;
+    /* primary text color */
+    /* color for table text */
+
+    --color3: #6E7A96;
+    /* article header background */
+    /* background color for code blocks */
+    /* background color for blockquotes */
+    /* hr color */
+    /* borders */
+    /* color for table rows (odd) */
+
+    --color4: #FFFFFF;
+    /* secondary text color */
+    /* text color in blockquotes */
+    /* text color in code blocks */
+    /* links */
+    /* headers */
+    /* color for shadows */
+    /* checkbox color */
+}

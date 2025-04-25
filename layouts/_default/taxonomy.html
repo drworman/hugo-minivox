@@ -1,0 +1,11 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+{{ range .Pages }}
+{{ $dateMachine := .Date | time.Format "1977-05-25T15:00:00-00:00" }}
+{{ $dateHuman := .Date | time.Format ":date_long" }}
+<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+{{ if (gt .Params.date 0) }} (<time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>){{ end }}
+<br/>
+{{ end }}
+{{ end }}

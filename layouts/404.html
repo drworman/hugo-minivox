@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex">
+        <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+        <link rel="stylesheet" href="{{ "/res/minivox.css" | relURL }}" />
+              <script src="/res/center-img.min.js"></script>
+              <script src="/res/theme.min.js"></script>
+              {{ partial "custom_head.html" . }}
+              </head>
+              <body>
+                  <header>
+                      {{ if fileExists "/res/images/banner.png" }}<img src="/res/images.banner.png">{{ else }}<h1>{{ site.Title }}</h1>{{ end }}
+                      <nav>
+                          <ul class="menu">
+                              {{ range .Site.Menus.main }}
+                              <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+                              {{ end }}
+                          </ul>
+                      </nav>
+                      <hr/>
+                  </header>
+                  <main>
+                      <div class="container">
+                          <div class="article-meta">
+                              <span class="title">404 NOT FOUND</span>
+                          </div>
+                      </div>
+                  </main>
+                  <footer>
+                      <hr/>
+                      {{ partial "custom_foot.html" . }}
+                      {{ with .Site.Params.footer }}
+                      {{ replace . "{Year}" now.Year | markdownify }}
+                      {{ end }}
+                      <br/>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> | <a href="https://github.com/drworman/hugo-minivox" target="_blank">Hugo Minivox Theme</a>
+                  </footer>
+              </body>
+              </html>

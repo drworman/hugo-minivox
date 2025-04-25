@@ -1,0 +1,34 @@
+{{ define "main" }}
+{{ $dateMachine := .Date | time.Format "1977-05-25T15:00:00-00:00" }}
+{{ $dateHuman := .Date | time.Format ":date_long" }}
+<div class="container">
+  <div class="article-meta"><span class="title">Recent News</span></div>
+  {{ if (gt .Params.date 0) }}<time class="inlineRight margin-half" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>{{ end }}
+  {{ range first 2 (where site.RegularPages.ByDate.Reverse "Section" "news") }}
+  <hr/>
+  <div class="inlineLeft postMeta"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+  <div class="inlineRight postMeta">
+    {{ if (gt .Params.date 0) }}Posted <time class="date" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>{{ end }}
+  </div>
+  <br/><br/>
+  <div class="article" style="text-indent:3em">{{ .Summary }}</div>
+  <div class="inlineRight"><a href="{{ .RelPermalink }}">Full Story</a></div>
+  <br/>
+  {{ end }}
+  <br/>
+  <hr/>
+
+  <div class="article-meta"><span class="title">Recent Articles</span></div>
+  <hr/>
+  {{ range first 5 site.RegularPages.ByDate.Reverse }}
+  <div class=" inlineLeft postMeta"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+  </div>
+  <div class="inlineRight postMeta">
+    {{ if or (gt .Params.date 0) (not (eq .CurrentSection.Title .Site.Title)) }}Posted{{ end }}
+    {{ if (not (eq .CurrentSection.Title .Site.Title)) }} in {{ .Section | humanize }}{{ end }}
+    {{ if (gt .Params.date 0) }} on <time class="date" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>{{ end }}
+  </div>
+  <br/>
+  {{ end }}
+</div>
+{{ end }}
