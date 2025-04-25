@@ -1,4 +1,4 @@
-# README for HUGO-MINIVOX v0.1.0
+# README for HUGO-MINIVOX v0.1.1
                                                                                                           
 **Minivox** is a Hugo theme that is intended to display information on screen without a bunch of fancy fluff getting in the way. Additional information [here](http://hugo-minivox.worman.com/about).
 
@@ -8,11 +8,6 @@ in your Hugo themes directory:
 ```
 git clone https://github.com/drworman/hugo-minivox
 ```
-If you plan on using a custom 404 page, then:
-```
-mv 404.html ../../layouts/
-```
-and configure your webserver to redirect 404 to: *`yoursite.com/404`*
 
 ### Configuration:
 
